@@ -35,16 +35,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'bom_project.urls'
 WSGI_APPLICATION = 'bom_project.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'bomsoftware'),
-        'USER': os.environ.get('DB_USER', 'synergie'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'synergie1234'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
-    }
-}
+
 
 database_url = os.environ.get("DATABASE_URL")
 DATABASES["default"] = dj_database_url.parse(database_url)
