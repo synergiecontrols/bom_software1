@@ -46,7 +46,7 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.parse("postgresql://synergie:Gs6ksV11xVpOfY3ESUzMhColaCnvWPVf@dpg-cs7l07aj1k6c73fid3g0-a.oregon-postgres.render.com/bomsoftware_vs6u")
+DATABASES["default"] = dj_database_url.parse("postgresql://synergie:Gs6ksV11xVpOfY3ESUzMhColaCnvWPVf@dpg-cs7l07aj1k6c73fid3g0-a/bomsoftware_vs6u")
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
