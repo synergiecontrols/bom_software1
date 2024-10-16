@@ -15,7 +15,11 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 
 # Create your views here.
+from django.http import HttpResponse
 
+def home(request):
+    return HttpResponse("Welcome to the BOM API!")
+    
 
 @api_view(['POST'])
 def register(request):
