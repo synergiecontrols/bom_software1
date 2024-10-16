@@ -8,6 +8,7 @@ router = DefaultRouter()
 router.register(r'items', ItemViewSet)
 
 urlpatterns = [
+    path('', home, name='home'),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api/submit-bom/', submit_create_bom, name='submit_bom'),
