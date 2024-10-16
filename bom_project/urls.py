@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from bom_app.views import ItemViewSet, update_price ,submit_create_bom ,delete_items,register, login ,logout
+from bom_app.views import ItemViewSet, update_price ,submit_create_bom ,delete_items,register, login ,logout,home
 
 
 router = DefaultRouter()
