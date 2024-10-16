@@ -6,8 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'default-secret-key')
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
-ALLOWED_HOSTS = ['bom-software1-u9ww.onrender.com', 'localhost', '127.0.0.1']
-
+ALLOWED_HOSTS = ['bom-software1-u9ww.onrender.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -35,13 +34,19 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'bom_project.urls'
 WSGI_APPLICATION = 'bom_project.wsgi.application'
 
+# Set up DATABASES
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DB_NAME', 'bomsoftware'),
+        'USER': os.environ.get('DB_USER', 'synergie'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'synergie1234'),
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
+    }
+}
 
-
-database_url = os.environ.get("DATABASE_URL")
-DATABASES["default"] = dj_database_url.parse(database_url)
-
-
-
+DATABASES["default"] = dj_database_url.parse("postgresql://synergie:Gs6ksV11xVpOfY3ESUzMhColaCnvWPVf@dpg-cs7l07aj1k6c73fid3g0-a.oregon-postgres.render.com/bomsoftware_vs6u")
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
