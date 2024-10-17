@@ -72,8 +72,8 @@ USE_I18N = True
 USE_TZ = True
 
 CORS_ALLOWED_ORIGINS = [
-    "https://synergiecontrols.com",
-    "https://www.synergiecontrols.com",
+    "http://bomsoftware.synergiecontrols.com/",
+    "https://bomsoftware.synergiecontrols.com/",
     "http://localhost:3000",  # If testing locally
 ]
 
